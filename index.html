@@ -7,23 +7,41 @@
     <title>java</title>
 </head>
 <body>
-    <form id="input-todo">
+    <!-- <form id="input-todo">
         <input type="text" placeholder="Enter Your Value" id="todoInput">
         <button type="submit">Add</button>
-    </form>
-
+    </form> -->
+    <h1 id="Results">0</h1>
+    <button id="plusButton">+</button>
+    <button id="minsButton">-</button>
 
     <script>
 
-        const todo = [];
-        document.getElementById("input-todo")
-        document.addEventListener("submit", function (event){
-            event.preventDefault();
-            const todoInput = document.getElementById("todoInput").value;
-            todo.push(todoInput);
-            console.log("todo",todo);
+        // const todo = [];
+        // document.getElementById("input-todo")
+        // document.addEventListener("submit", function (event){
+        //     event.preventDefault();
+        //     const todoInput = document.getElementById("todoInput").value;
+        //     todo.push(todoInput);
+        //     console.log("todo",todo);
         
+        // });
+            let myConter = 0;
+        const plusButton = document.getElementById("plusButton");
+        const minsButton = document.getElementById("minsButton");
+        const Results = document.getElementById("Results");
+        plusButton.addEventListener("click", function(){
+            myConter = myConter + 1;
+            Results.innerText = myConter;
+
         });
+
+        minsButton.addEventListener("click", function(){
+            myConter = myConter - 1;
+            Results.innerText = myConter;
+
+        });
+     
        
     </script>
 </body>
