@@ -13,18 +13,97 @@
     </form> -->
 
 
-     <!-- conter button -->
-    <h1 id="Results">0</h1>
+     <!-- conter button  -->
+
+
+    <!-- <h1 id="Results">0</h1>
     <button id="plusButton">+</button>
-    <button id="minsButton">-</button>
-    <!--End conter button -->
-
-
-
-
+    <button id="minsButton">-</button> -->
 
     
+    <!-- End conter button -->
+ 
+
+        <form id="todoForm">
+            <input type="text" placeholder="Enter Your value" id="todoInput">
+            <button type="submit"> Add</button>
+        </form>
+        <ul id="todos"></ul>
+        <!-- <form id="todoForm">
+            <input type="text" id="todoInput" />
+            <button type="submit">Add</button>
+          </form>
+          <ul id="todos"></ul> -->
     <script>
+            let todos = [];
+    document
+      .getElementById("todoForm")
+      .addEventListener("submit", function (event) {
+        event.preventDefault();
+        const todoInput = document.getElementById("todoInput").value;
+        const todosList = document.getElementById("todos");
+        todos.push(todoInput);
+        document.getElementById("todoInput").value = "";
+        const newListItem = document.createElement("li");
+        const deleteButton = document.createElement("button");
+        newListItem.innerText = todoInput;
+        deleteButton.innerText = "delete";
+        deleteButton.onclick = function () {
+          const filteredArr = todos.filter(function (arrElement) {
+            return todoInput !== arrElement;
+          });
+          todos = filteredArr;
+          renderMyTodoList();
+        };
+
+        todosList.appendChild(newListItem);
+        todosList.appendChild(deleteButton);
+       
+      });
+
+      //     let todos = [];
+      //   document.getElementById("todoForm")
+      //   document.addEventListener("submit", function (event) {
+      //       event.preventDefault();
+
+
+      //   const todoInput = document.getElementById("todoInput").value;
+      //   const todosList = document.getElementById("todos");
+      //   todos.push(todoInput);
+
+      //   document.getElementById("todoInput").value = "" ;
+      //   const newListItem = document.createElement("li");
+      //   const deleteButton = document.createElement("button");
+      //   newListItem.innerText = todoInput;
+      //   deleteButton.innerText = "delete";
+      //   deleteButton.onclick = function () {
+      //     const filteredArr = todos.filter(function (arrElement) {
+      //       return todoInput !== arrElement;
+      //   });
+      //   todos = filteredArr;
+      //     renderMyTodoList();
+      //   };
+
+      //   todosList.appendChild(newListItem);
+      //   todosList.appendChild(deleteButton);
+      //  });
+
+    
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
 
         // const todo = [];
         // document.getElementById("input-todo")
@@ -42,25 +121,49 @@
 
                 // Conter             
 
-            let myConter = 0;
-        const plusButton = document.getElementById("plusButton");
-        const minsButton = document.getElementById("minsButton");
-        const Results = document.getElementById("Results");
-        plusButton.addEventListener("click", function(){
-            myConter = myConter + 1;
-            Results.innerText = myConter;
+        //     let myConter = 0;
+        // const plusButton = document.getElementById("plusButton");
+        // const minsButton = document.getElementById("minsButton");
+        // const Results = document.getElementById("Results");
+        // plusButton.addEventListener("click", function(){
+        //     myConter = myConter + 1;
+        //     Results.innerText = myConter;
 
-        });
+        // });
 
-        minsButton.addEventListener("click", function(){
-            myConter = myConter - 1;
-            Results.innerText = myConter;
+        // minsButton.addEventListener("click", function(){
+        //     myConter = myConter - 1;
+        //     Results.innerText = myConter;
 
-        });
+        // });
 
 
             //   End Conter
      
+
+
+
+    function renderMyTodoList() {
+      const todosList = document.getElementById("todos");
+      todosList.innerHTML = "";
+      for (let index = 0; index < todos.length; index++) {
+        const todoInput = todos[index];
+        const newListItem = document.createElement("li");
+        const deleteButton = document.createElement("button");
+        newListItem.innerText = todoInput;
+        deleteButton.innerText = "delete";
+        deleteButton.onclick = function () {
+          const filteredArr = todos.filter(function (arrElement) {
+            return todoInput !== arrElement;
+          });
+          todos = filteredArr;
+          renderMyTodoList();
+        };
+
+        todosList.appendChild(newListItem);
+        todosList.appendChild(deleteButton);
+      }
+    }
        
     </script>
 </body>
