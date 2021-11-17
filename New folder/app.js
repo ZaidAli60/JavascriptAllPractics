@@ -21,24 +21,29 @@
 
 
 
-var city = prompt("Enter Your city");
-var firstCharater = city.slice(0,1)
-firstCharater = firstCharater.toUpperCase()
-var otherCharater = city.slice(1)
-otherCharater = city.slice(1)
+// var city = prompt("Enter Your city");
+// var firstCharater = city.slice(0,1)
+// firstCharater = firstCharater.toUpperCase()
+// var otherCharater = city.slice(1)
+// otherCharater = city.slice(1)
 
-var lowerUpper =firstCharater+otherCharater;
-console.log(lowerUpper);
+// var lowerUpper =firstCharater+otherCharater;
+// console.log(lowerUpper);
 
-var arr = ['faisalabad', 'lahore', 'multan'];
+// var arr = ['faisalabad', 'lahore', 'multan'];
 
-for (var i = 0; i < arr.length; i++){
-    if (arr[i] === city){
-        alert('City has found')
-    }else{
-        alert('City has not found')
-    }
-};
+// for (var i = 0; i < arr.length; i++){
+//     if (arr[i] === city){
+//         alert('City has found')
+//     }else{
+//         alert('City has not found')
+//     }
+// };
+
+
+
+
+
 
 
 
