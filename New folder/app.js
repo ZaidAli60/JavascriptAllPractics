@@ -36,6 +36,9 @@ for (var i = 0; i < arr.length; i++){
     if (arr[i] === city){
         alert('City has found')
     }else{
-        alert('`City has not found')
+        alert('City has not found')
     }
 };
+
+
+
