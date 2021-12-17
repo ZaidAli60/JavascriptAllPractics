@@ -30,7 +30,7 @@
     align-items: center;
 
 }
-.alert-dangers{
+.alert-danger{
     color: white !important;
     background-color: #ff0e0e;
     height: 1px;
@@ -90,9 +90,11 @@
 .todo-container{
     margin-top: 2rem;
     visibility: hidden;
+    /* visibility: visible; */
 }
-.show-container{
-    visibility: visible;
+.shows-container{
+    
+    visibility: visible !important;
 }
 
 
