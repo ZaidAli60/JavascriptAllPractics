@@ -21,6 +21,25 @@
     text-align: center;
     /* margin-bottom: 40px; */
 }
+.alert{
+    display: flex;
+    text-transform: capitalize;
+    font-size: 1rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+}
+.alert-dangers{
+    color: white !important;
+    background-color: #ff0e0e;
+    height: 1px;
+}
+.alert-green {
+    color: white;
+    background-color: green;
+    height: 1px;
+}
 
 
 .input-control{
