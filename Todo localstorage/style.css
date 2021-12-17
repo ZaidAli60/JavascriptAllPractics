@@ -48,7 +48,28 @@
     padding: 0.25rem 1rem;
     text-transform: capitalize;
 }
+.edit-btn{
+    background: none;
+    color: rgb(87, 0, 128);
+    border: none;
+    font-size: 1.5rem;
 
+}
+.delete-btn{
+    background: none;
+    color:red;
+    border: none;
+    font-size: 1.5rem ;
+
+}
+
+.todo-container{
+    margin-top: 2rem;
+    visibility: hidden;
+}
+.show-container{
+    visibility: visible;
+}
 
 
 
