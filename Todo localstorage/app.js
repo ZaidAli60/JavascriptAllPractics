@@ -4,6 +4,7 @@ const todoContainer = document.querySelector(".todo-container")
 const lists = document.querySelector(".list-container")
 const clearBtn = document.querySelector(".clear-btn")
 const alerts = document.querySelector(".alert")
+const submitBtn = document.querySelector(".submit-btn")
 
 // edit options
 
@@ -13,12 +14,18 @@ let editID = "";
 
 // submit for
 forms.addEventListener("submit",addItem)
+// delete-btn
+clearBtn.addEventListener("click", clearItem)
+
+
+
 function addItem(e){
     e.preventDefault();
     const value = inputControl.value;
    
   
     const id = new Date().getTime().toString();
+    // const id = "";
    
     if (value && !editFlag) {
         const element = document.createElement("article")
@@ -35,6 +42,19 @@ function addItem(e){
            lists.appendChild(element);
            displayAlert("Add the item", "green")
            todoContainer.classList.add("shows-container")
+
+        //    set addLocalStorage
+        addLocalStorage(id,value);
+        // set Default value
+        setBackToDefault();
+
+
+
+
+
+
+
+
         } else if (value && editFlag){
         console.log("editing")
     }else{
@@ -52,4 +72,51 @@ function displayAlert( text, action){
     }
     ,1000)
 }
+        // clear the all items
+        function clearItem(){
+            const items = document.querySelectorAll(".todo-item")
+            // console.log(items)
+            if (items.length > 0) {
+                items.forEach(function (item){
+                    lists.removeChild(item)
+                });
+            }
+        }
+
+
+
+
+        // set the back Default
+        function setBackToDefault() {
+            inputControl.value = "";
+            editFlag = false;
+            editID = "";
+            submitBtn.textContent = "submit";
+            
+        }
+     
+
+
+    //    setup localStorage 
+    function addLocalStorage(id,value) {
+        console.log("add the local storage")
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
