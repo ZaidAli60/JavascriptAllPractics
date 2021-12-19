@@ -61,7 +61,10 @@ function addItem(e){
 
 
         } else if (value && editFlag){
-        console.log("editing")
+            editElement.innerHTML = value ;
+            setBackToDefault()
+            displayAlert("Value change" , "success")
+
     }else{
         displayAlert("please enter your value", "danger")
     }
@@ -92,15 +95,27 @@ function displayAlert( text, action){
         // Delete Buttons
         function deleteButton(e){
             const element = e.currentTarget.parentElement.parentElement;
+            const id = element.dataset.id;
             lists.removeChild(element)
             if (lists.children.length === 0) {
             todoContainer.classList.remove("shows-container")
                 
             }
+            displayAlert("Item remove", "danger");
+            setBackToDefault();
         }
         // update edit
-        function editItems(){
-            console.log("update")
+        function editItems(e){
+            const element = e.currentTarget.parentElement.parentElement;
+            editElement = e.currentTarget.parentElement.previousElementSibling;
+            // console.log(element)
+            inputControl.value = editElement.innerHTML;
+            editFlag = true;
+            editID = element.dataset.id;
+            // console.log(editID)
+            submitBtn.textContent = "edit";
+       
+            
         }
 
 
