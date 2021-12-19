@@ -43,6 +43,11 @@ function addItem(e){
            displayAlert("Add the item", "green")
            todoContainer.classList.add("shows-container")
 
+          const deleteBtn = element.querySelector(".delete-btn")
+          const editBtn = element.querySelector(".edit-btn")
+          deleteBtn.addEventListener("click" ,deleteButton )
+          editBtn.addEventListener("click" ,editItems )
+            
         //    set addLocalStorage
         addLocalStorage(id,value);
         // set Default value
@@ -81,6 +86,21 @@ function displayAlert( text, action){
                     lists.removeChild(item)
                 });
             }
+            todoContainer.classList.remove("shows-container")
+            displayAlert("Empty value", "danger");
+        }
+        // Delete Buttons
+        function deleteButton(e){
+            const element = e.currentTarget.parentElement.parentElement;
+            lists.removeChild(element)
+            if (lists.children.length === 0) {
+            todoContainer.classList.remove("shows-container")
+                
+            }
+        }
+        // update edit
+        function editItems(){
+            console.log("update")
         }
 
 
