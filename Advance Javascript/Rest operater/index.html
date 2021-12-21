@@ -14,21 +14,31 @@
     //     }
     //  myFunction(2,2,4,4)
 
-        function sum(name,...args) {
-            // console.log(arguments)
-            document.write(`Hello ${name}: `)
-            let sum = 0 ;
-            for(let i in args){
-                sum += args[i]
-            }
-            // console.log(sum)
-            // console.log(name)
-            document.write(sum + "<br>")
-        }
+        // function sum(name,...args) {
+        //     // console.log(arguments)
+        //     document.write(`Hello ${name}: `)
+        //     let sum = 0 ;
+        //     for(let i in args){
+        //         sum += args[i]
+        //     }
+        //     // console.log(sum)
+        //     // console.log(name)
+        //     document.write(sum + "<br>")
+        // }
 
-        sum( "Zaid Ali", 20,20,20)
-        sum( "Zain Ali", 20,20,20)
-        // sum(10,10)
+        // sum( "Zaid Ali", 20,20,20)
+        // sum( "Zain Ali", 20,20,20)
+        // // sum(10,10)
+
+        function multiply(multiplier, ...theArgs) {
+  return theArgs.map( function (element) {
+    return multiplier * element
+  })
+}
+
+let arr = multiply(2, 15, 25, 42)
+console.log(arr)  // [30, 50, 84]
+
      
     </script>
 </body>
