@@ -134,17 +134,25 @@ function displayAlert( text, action){
 
     //    setup localStorage 
     function addLocalStorage(id,value) {
-        console.log("add the local storage")
+        const todos = {id,value}
+        console.log(todos)
+        // console.log("add the local storage")
     }
 
+    function removeLocalStorage() {}
+
+    function editLocalStorage() {}
 
 
 
+    // localStorage.setItem("username", JSON.stringify(["zaid","zain"]));
+    // const pares = JSON.parse(localStorage.getItem("username"))
+    // // console.log(pares)
+    // localStorage.removeItem("username")
 
 
 
-
-
+  
 
 
 

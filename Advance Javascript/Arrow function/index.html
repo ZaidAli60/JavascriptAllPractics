@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow function</title>
+</head>
+<body>
+    
+    <p id="para"></p>
+    
+
+    <script>
+
+        // simple function
+        // function funName(a,b){
+        //     console.log(a+b)
+        // }
+        // funName(2,2);
+
+        // let funName = function(){
+        //     console.log("Hello World")
+        // }
+
+        // funName()
+
+
+
+        // let funName = function(a,b){
+        //     console.log(a+b)
+        // }
+
+        // funName(4,4)
+
+        // function myFunction(a,b) {
+        //     return a * b;
+        // }
+        // const x = myFunction(8,2);
+        // console.log(x);
+
+
+        // function myFunction(a,b) {
+        //     return a + b;
+        // }
+        // const x = myFunction("first parmeter","Secound Parmeter");
+        // console.log(x);
+
+        // function myFunction(a,b){
+        //     console.log(a,b);
+        // }
+
+        // myFunction("Zaid Ali", "Zain Ali")
+        
+        // globleScope
+        // const x = "Zaid Ali";
+        // myFunction()
+
+        // function myFunction(a){
+        //     document.getElementById("para").innerHTML = `I am  ${x}`;
+        // }
+
+        // global variable
+        // myFunction()
+        // document.getElementById("para").innerHTML = `I am ${x}`;
+        // function myFunction() {
+        //      x = "Zain Ali";
+        // }
+
+
+            // Arrow Function
+
+        let myFunction = (name,age) =>`Hello ${name}-${age}`;
+        
+        
+        console.log(myFunction("Zaid Ali",20));
+
+        console.log(typeof myFunction);
+        
+
+
+
+
+
+
+    </script>
+</body>
+</html>
