@@ -153,53 +153,94 @@
         //  b.info();
     
     //   multipal inheritance
-    class empolyee {
-             constructor(name,age,salary){
-                 this.empname = name;
-                 this.empage = age;
-                 this.empsalary = salary;
+    // class empolyee {
+    //          constructor(name,age,salary){
+    //              this.empname = name;
+    //              this.empage = age;
+    //              this.empsalary = salary;
 
                 
-             }
-             info(){
-                //  console.log("Empolyer :" + this.empname)
-                document.write(` <h3>Empolyer Classes</h3> <br>
-                                  Name :${this.empname}<br>
-                                  Age : ${this.empage} <br>
-                                  Salary :${this.empsalary}`)
-             }
-         }    
+    //          }
+    //          info(){
+    //             //  console.log("Empolyer :" + this.empname)
+    //             document.write(` <h3>Empolyer Classes</h3> <br>
+    //                               Name :${this.empname}<br>
+    //                               Age : ${this.empage} <br>
+    //                               Salary :${this.empsalary}`)
+    //          }
+    //      }    
          
-         class manager extends empolyee{
+    //      class manager extends empolyee{
            
-            info(){
-                let travelingpay = 500;
-                let phonepay = 100; 
-                let totalexpence = this.empsalary + travelingpay + phonepay;
+    //         info(){
+    //             let travelingpay = 500;
+    //             let phonepay = 100; 
+    //             let totalexpence = this.empsalary + travelingpay + phonepay;
 
-                // super.info();
-                document.write(` <h3>Manger Classes</h3> <br>
-                                  Name :${this.empname}<br>
-                                  Age : ${this.empage} <br>
-                                  Salary :${totalexpence}`) 
+    //             // super.info();
+    //             document.write(` <h3>Manger Classes</h3> <br>
+    //                               Name :${this.empname}<br>
+    //                               Age : ${this.empage} <br>
+    //                               Salary :${totalexpence}`) 
+    //         }
+    //      }
+    //      class test extends manager{
+    //         info(){
+    //             //  console.log("Empolyer :" + this.empname)
+    //             document.write(` <h3>Empolyer Classes</h3> <br>
+    //                               Name :${this.empname}<br>
+    //                               Age : ${this.empage} <br>
+    //                               Salary :${this.empsalary}`)
+    //          }
+    //      }
+
+    //      let e = new manager("Zaid Ali",20,20000);
+    //      let b = new empolyee("Faisal",25,10000);
+    //      let c = new test("Hamza",30,50000)
+    //      e.info();
+    //      b.info();
+    //      c.info();
+
+
+        // human
+
+        class Human {
+            constructor(name,heigth,age){
+                this.name = name;
+                this.heigth = heigth;
+                this.age = age;
             }
-         }
-         class test extends manager{
-            info(){
-                //  console.log("Empolyer :" + this.empname)
-                document.write(` <h3>Empolyer Classes</h3> <br>
-                                  Name :${this.empname}<br>
-                                  Age : ${this.empage} <br>
-                                  Salary :${this.empsalary}`)
-             }
-         }
+            changeName(newName){
+                this.name = newName;
+            }
+        }
 
-         let e = new manager("Zaid Ali",20,20000);
-         let b = new empolyee("Faisal",25,10000);
-         let c = new test("Hamza",30,50000)
-         e.info();
-         b.info();
-         c.info();
+        const human = new Human("Zaid ALi",5.5,20);
+        const human1 = new Human("Faisal",4.2,19);
+        const human2 = new Human("Zain ALi",6.4,25);
+        console.log("human :", human)
+        console.log(human1)
+        console.log(human2)
+        // human.changeName("Faisal");
+
+        class student extends Human{
+            constructor(name,heigth,age,rollNo,section){
+                super(name,heigth,age)
+                this.rollNo = rollNo;
+                this.section = section;
+            }
+            changeRoll(rollNo,section){
+                this.rollNo = rollNo;
+                this.section = section;
+            }
+        }
+        const huma = new Human("Zaid ALi",5.5,20);
+        const students = new student("Zaid Ali",5.5,20,5096,"A");
+
+        console.log(human1)
+        console.log(students)
+        students.changeRoll(5098,"B");
+
     </script>
 </body>
 </html>
