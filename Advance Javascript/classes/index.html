@@ -33,12 +33,19 @@
             message(){
                 console.log("Helle World" + this.studentname + "Your age is " + this.age)
             }
+            static staticmethed(){
+                console.log("Static Method")
+            }
+
         }
 
         let a = new student("Zaid ALi",20);
         // a.name = " Zaid Ali";
-        
+        let b = new student("Zaid ALi",20);
+        b.message();
         a.message();
+
+        student.staticmethed();
         
     
       
