@@ -23,32 +23,183 @@
 
 
 
-        class student{
+        // class student{
 
-            constructor(name,age) {
-                this.studentname= name;
-                this.age = age;
-                console.log("Constructor function")
-            }
-            message(){
-                console.log("Helle World" + this.studentname + "Your age is " + this.age)
-            }
-            static staticmethed(){
-                console.log("Static Method")
-            }
+        //     constructor(name,age) {
+        //         this.studentname= name;
+        //         this.age = age;
+        //         console.log("Constructor function")
+        //     }
+        //     message(){
+        //         console.log("Helle World" + this.studentname + "Your age is " + this.age)
+        //     }
+        //     static staticmethed(){
+        //         console.log("Static Method")
+        //     }
 
-        }
+        // }
 
-        let a = new student("Zaid ALi",20);
-        // a.name = " Zaid Ali";
-        let b = new student("Zaid ALi",20);
-        b.message();
-        a.message();
+        // let a = new student("Zaid ALi",20);
+        // // a.name = " Zaid Ali";
+        // let b = new student("Zaid ALi",20);
+        // b.message();
+        // a.message();
 
-        student.staticmethed();
+        // student.staticmethed();
+
+                   // inheritnace
+           
+        //  class empolyee {
+        //      constructor(name){
+        //          this.empname = name;
+        //         //  console.log("consturctor : Empolyer")
+        //      }
+        //      info(name){
+        //          console.log("Empolyer :" + this.empname)
+        //      }
+        //  }    
+         
+        //  class manager extends empolyee{
+        //     info(name){
+        //         super.info();
+        //          console.log("manager :" + this.empname)
+        //      }
+        //  }
+
+        //  let e = new manager("Zaid Ali");
+        //  e.info();
+         
+
+        // class empolyee {
+        //      constructor(name,age,salary){
+        //          this.empname = name;
+        //          this.empage = age;
+        //          this.empsalary = salary;
+
+                
+        //      }
+        //      info(){
+        //         //  console.log("Empolyer :" + this.empname)
+        //         document.write(` <h3>Empolyer Classes</h3> <br>
+        //                           Name :${this.empname}<br>
+        //                           Age : ${this.empage} <br>
+        //                           Salary :${this.empsalary}`)
+        //      }
+        //  }    
+         
+        //  class manager extends empolyee{
+        //     // info(name){
+        //     //     super.info();
+        //     //      console.log("manager :" + this.empname)
+        //     //  }
+        //     info(){
+        //         super.info();
+        //         document.write(` <h3>Empolyer Classes</h3> <br>
+        //                           Name :${this.empname}<br>
+        //                           Age : ${this.empage} <br>
+        //                           Salary :${this.empsalary}`) 
+        //     }
+        //  }
+
+        //  let e = new manager("Zaid Ali",20,20000);
+        //  e.info();
+         
+
+
         
+
+
+
+
+
+
+
+
+        // class empolyee {
+        //      constructor(name,age,salary){
+        //          this.empname = name;
+        //          this.empage = age;
+        //          this.empsalary = salary;
+
+                
+        //      }
+        //      info(){
+        //         //  console.log("Empolyer :" + this.empname)
+        //         document.write(` <h3>Empolyer Classes</h3> <br>
+        //                           Name :${this.empname}<br>
+        //                           Age : ${this.empage} <br>
+        //                           Salary :${this.empsalary}`)
+        //      }
+        //  }    
+         
+        //  class manager extends empolyee{
+           
+        //     info(){
+        //         let travelingpay = 500;
+        //         let phonepay = 100; 
+        //         let totalexpence = this.empsalary + travelingpay + phonepay;
+
+        //         // super.info();
+        //         document.write(` <h3>Manger Classes</h3> <br>
+        //                           Name :${this.empname}<br>
+        //                           Age : ${this.empage} <br>
+        //                           Salary :${totalexpence}`) 
+        //     }
+        //  }
+
+        //  let e = new manager("Zaid Ali",20,20000);
+        //  let b = new empolyee("Faisal",25,10000)
+        //  e.info();
+        //  b.info();
     
-      
+    //   multipal inheritance
+    class empolyee {
+             constructor(name,age,salary){
+                 this.empname = name;
+                 this.empage = age;
+                 this.empsalary = salary;
+
+                
+             }
+             info(){
+                //  console.log("Empolyer :" + this.empname)
+                document.write(` <h3>Empolyer Classes</h3> <br>
+                                  Name :${this.empname}<br>
+                                  Age : ${this.empage} <br>
+                                  Salary :${this.empsalary}`)
+             }
+         }    
+         
+         class manager extends empolyee{
+           
+            info(){
+                let travelingpay = 500;
+                let phonepay = 100; 
+                let totalexpence = this.empsalary + travelingpay + phonepay;
+
+                // super.info();
+                document.write(` <h3>Manger Classes</h3> <br>
+                                  Name :${this.empname}<br>
+                                  Age : ${this.empage} <br>
+                                  Salary :${totalexpence}`) 
+            }
+         }
+         class test extends manager{
+            info(){
+                //  console.log("Empolyer :" + this.empname)
+                document.write(` <h3>Empolyer Classes</h3> <br>
+                                  Name :${this.empname}<br>
+                                  Age : ${this.empage} <br>
+                                  Salary :${this.empsalary}`)
+             }
+         }
+
+         let e = new manager("Zaid Ali",20,20000);
+         let b = new empolyee("Faisal",25,10000);
+         let c = new test("Hamza",30,50000)
+         e.info();
+         b.info();
+         c.info();
     </script>
 </body>
 </html>
