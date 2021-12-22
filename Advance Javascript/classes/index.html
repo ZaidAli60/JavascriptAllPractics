@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classes</title>
+</head>
+<body>
+    
+
+    <script>
+
+        // classes
+        // class hello{
+        //     message(){
+        //         console.log("Helle World")
+        //     }
+        // }
+                // object
+        // let a = new hello();
+        // a.message();
+
+
+
+        class student{
+
+            constructor(name,age) {
+                this.studentname= name;
+                this.age = age;
+                console.log("Constructor function")
+            }
+            message(){
+                console.log("Helle World" + this.studentname + "Your age is " + this.age)
+            }
+        }
+
+        let a = new student("Zaid ALi",20);
+        // a.name = " Zaid Ali";
+        
+        a.message();
+        
+    
+      
+    </script>
+</body>
+</html>
