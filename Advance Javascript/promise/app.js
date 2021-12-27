@@ -112,37 +112,67 @@
 
 
 
-    let a = new Promise((resovle, reject) =>{
-        setTimeout(() => {
-            console.log("The first value has resolve")
-            resovle(10)
-        }, 1 * 1000);
-    });
-    let b = new Promise((resovle, reject) =>{
-        setTimeout(() => {
-            console.log("The secound value has rejected")
-            reject("Fail")
-        }, 2 * 1000);
-    });
+//     let a = new Promise((resovle, reject) =>{
+//         setTimeout(() => {
+//             console.log("The first value has resolve")
+//             resovle(10)
+//         }, 1 * 1000);
+//     });
+//     let b = new Promise((resovle, reject) =>{
+//         setTimeout(() => {
+//             console.log("The secound value has rejected")
+//             reject("Fail")
+//         }, 2 * 1000);
+//     });
 
-    let c = new Promise((resovle, reject) =>{
+//     let c = new Promise((resovle, reject) =>{
+//         setTimeout(() => {
+//             console.log("The third value has resolve")
+//             resovle(30)
+//         }, 3 * 1000);
+//     });
+
+//     var total = 0;
+//    Promise.all([a,b,c]).then((result) =>{
+//   for(var i in result){
+//       total += result[i]
+
+//   }
+//   console.log(`Result : ${result}`)
+//   console.log(`Total : ${total}`)
+
+
+// }).catch((error) =>{
+//     console.log(`error : ${error}`)
+// })
+    
+let promiseCall = function (returnData,message) {
+   return function(resolve,reject){
         setTimeout(() => {
-            console.log("The third value has resolve")
-            resovle(30)
-        }, 3 * 1000);
-    });
+            console.log(`The ${message} value has resolve`)
+            resolve(returnData)
+        }, returnData * 100);
+    }
+}
 
-    var total = 0;
-   Promise.all([a,b,c]).then((result) =>{
-  for(var i in result){
-      total += result[i]
 
-  }
-  console.log(`Result : ${result}`)
-  console.log(`Total : ${total}`)
+let a = new Promise(promiseCall(10,"first"));
+let b = new Promise(promiseCall(20,"secound"));
+let c = new Promise(promiseCall(30,"third"));
+let d = new Promise (function (resolve,reject) {
+    reject("The 4th promise has rejected");
+})
+
+var total = 0;
+Promise.all([a,b,c,d]).then((result) =>{
+for(var i in result){
+  total += result[i]
+
+}
+console.log(`Result : ${result}`)
+console.log(`Total : ${total}`)
 
 
 }).catch((error) =>{
-    console.log(`error : ${error}`)
+console.log(`error : ${error}`)
 })
-    
