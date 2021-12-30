@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>firebase integration</title>
+
+</head>
+<body>
+    <!-- <div>
+      <form id="formcontrol">
+        <input id="inputname" type="text" placeholder="Enter your name">
+        <br>
+        <br>
+        <input id="inputroll" type="text" placeholder="Enter your roll No">
+        <br>
+        <br>
+        <button type="submit">submit</button>
+      </form>
+    </div> -->
+<input type="text" id="name">
+<input type="text" id="age">
+<button id="sub">save</button>
+
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.6.1/firebase-database.min.js"></script> -->
+<!-- <script type="module" src="app.js">
+
+
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCFlQbwWjdHc5r-WZZhBaJDDKAwL9Xde8E",
+  authDomain: "project123-3b23d.firebaseapp.com",
+  databaseURL: "https://project123-3b23d-default-rtdb.firebaseio.com",
+  projectId: "project123-3b23d",
+  storageBucket: "project123-3b23d.appspot.com",
+  messagingSenderId: "326321457008",
+  appId: "1:326321457008:web:ab3833d43c12cccee6f1b5"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+</script> -->
+
+
+<script type="module">
+   // Import the functions you need from the SDKs you need
+   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+  import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCFlQbwWjdHc5r-WZZhBaJDDKAwL9Xde8E",
+    authDomain: "project123-3b23d.firebaseapp.com",
+    databaseURL: "https://project123-3b23d-default-rtdb.firebaseio.com/",
+    projectId: "project123-3b23d",
+    storageBucket: "project123-3b23d.appspot.com",
+    messagingSenderId: "326321457008",
+    appId: "1:326321457008:web:ab3833d43c12cccee6f1b5"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+
+
+  document.getElementById("sub").addEventListener("click",function writeUserData(name,age){
+   name = document.getElementById("name").value;
+   age = document.getElementById("age").value;
+
+    set(ref(db, 'users/'), {
+    name: name,
+    age : age,
+  });
+  })
+
+ 
+  // const db = getDatabase();
+  
+
+
+
+
+
+// const inputName = document.getElementById("inputname")
+//   const rollNo = document.getElementById("inputroll")
+//   const formControl = document.getElementById("formcontrol")
+  
+//   formControl.addEventListener("submit",function writeUserData(name, rollNo) {
+ 
+  
+//   var obj = {
+//   name: inputName.value,
+//   rollno:rollNo.value
+//   }
+
+
+
+  
+//   emptyInput();
+//   })
+  
+  
+//   function emptyInput(){
+//   inputName.value = "";
+//   rollNo.value = "";
+//   }
+
+
+
+
+
+</script>
+
+
+
+  
+</body>
+</html>
