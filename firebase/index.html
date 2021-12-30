@@ -8,7 +8,7 @@
 
 </head>
 <body>
-    <!-- <div>
+  
       <form id="formcontrol">
         <input id="inputname" type="text" placeholder="Enter your name">
         <br>
@@ -16,12 +16,12 @@
         <input id="inputroll" type="text" placeholder="Enter your roll No">
         <br>
         <br>
-        <button type="submit">submit</button>
+      
       </form>
-    </div> -->
-<input type="text" id="name">
+      <button id="sub">submit</button>
+<!-- <input type="text" id="name">
 <input type="text" id="age">
-<button id="sub">save</button>
+<button id="sub">save</button> -->
 
 
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.6.1/firebase-database.min.js"></script> -->
@@ -68,15 +68,15 @@ const app = initializeApp(firebaseConfig);
   const db = getDatabase(app);
 
 
-  document.getElementById("sub").addEventListener("click",function writeUserData(name,age){
-   name = document.getElementById("name").value;
-   age = document.getElementById("age").value;
+  // document.getElementById("sub").addEventListener("click",function writeUserData(name,age){
+  //  name = document.getElementById("name").value;
+  //  age = document.getElementById("age").value;
 
-    set(ref(db, 'users/'), {
-    name: name,
-    age : age,
-  });
-  })
+  //   set(ref(db, 'users/'), {
+  //   name: name,
+  //   age : age,
+  // });
+  // })
 
  
   // const db = getDatabase();
@@ -109,6 +109,27 @@ const app = initializeApp(firebaseConfig);
 //   inputName.value = "";
 //   rollNo.value = "";
 //   }
+const btn = document.getElementById("sub");
+
+
+btn.addEventListener("click",function writeUserData(inputName,inputRoll){
+  inputName = document.getElementById("inputname");
+  inputRoll = document.getElementById("inputroll");
+
+
+
+  set(ref(db, 'users/'), {
+  Name : inputName.value,
+  RollNo :inputRoll.value, 
+
+  });
+
+  inputName.value = "";
+  inputRoll.value = "";
+
+});
+
+
 
 
 
