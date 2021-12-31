@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>world roject</title>
+</head>
+<body>
+
+
+    <!-- <select multiple>
+        <option value="1">0001</option>
+        <option value="2">0010</option>
+        <option value="4">0100</option>
+        <option value="8">1000</option>
+      </select> = <span id="output">0</span> -->
+        <!-- <input id="multiple" type="text"> =  <span id="output">0</span> -->
+        <!-- <h1>Type a word in the box</h1>
+        <input type="text" id="str">
+        <div id="output"></div>
+        <button id="btn"><h2>Click to calculate word length</h2></button> -->
+            <!-- <textarea onkeyup="worldCount(this)"></textarea> -->
+            <!-- <input type="text" onkeyup="worldCount(this)">
+            <span id="count"></span> -->
+            <h1>Type a word in the box</h1>
+            <input type="text" onkeyup="worldCount(this)" id="str">
+            <span id="output"></span>
+            <!-- <button id="btn" ></button> -->
+    <script>
+        // function worldCount(self){
+        //     var spaces = self.value
+        //     var world =spaces.length;
+        //     document.getElementById("count").innerHTML = world + "worlds"
+        // }
+
+
+        
+
+ function worldCount(self){
+    var word = self.value;
+ var count = word.length;
+    // let outputDiv = document.getElementById('output');
+    document.getElementById('output').innerHTML = count;
+    // outputDiv.innerHTML = `<h1>${count}</h1>`
+};
+
+// count.textContant = outputDiv;
+// outputDiv.textContent = outputDiv;
+// let button = document.getElementById('btn');
+
+// button.addEventListener('click', function(){
+//     let word = document.getElementById('str').value;
+//     let count = word.length;
+//     let fdfdd = count.innerText;
+//     document.write(fdfdd)
+// })
+    // let outputDiv = document.getElementById('output');
+// console.log(count)
+
+
+    // outputDiv.innerHTML = `<h1>${count}</h1>`
+
+   
+
+
+
+//   var select = document.getElementById("multiple");
+//   var output = document.querySelector("#output");
+//   multiple.addEventListener("change", function() {
+//     var number = 0;
+//     for (var i = 0; i < select.length; i++) {
+//       var option = select[i];
+//       if (select)
+//         number += Number();
+//     }
+//     output.textContent = number;
+//   });
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // var inputValue = document.getElementById("world").value;
+        
+        // // console.log(inputValue)
+        // var count = inputValue.length;
+        // var result = document.getElementById("results")
+        // result.innerHTML = `<h1>${count}</h1>`;
+        // // console.log(count)
+
+
+
+//         let button = document.getElementById('btn');
+
+// button.addEventListener('click', function(){
+//     let word = document.getElementById('str').value;
+//     let count = word.length;
+//     let outputDiv = document.getElementById('output');
+
+//     outputDiv.innerHTML = `<h1>${count}</h1>`
+// });
+    </script>
+</body>
+</html>
