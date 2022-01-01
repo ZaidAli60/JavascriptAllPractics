@@ -1,0 +1,23 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(255, 243, 223);
+}
+.form-box{
+    border: 2px solid green;
+    width: 80%;
+    padding: 20px 20px 20px 20px;
+}
+.input{
+    width: 100%;
+    height: 2rem;
+    border: 2px solid green;
+}
+.btns{
+    padding: 3px 5px 3px 5px;
+    border: 1px solid green;
+    color: green;
+}
