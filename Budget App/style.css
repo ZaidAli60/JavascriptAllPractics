@@ -27,3 +27,13 @@ body{
     justify-content: space-between;
     text-align: center;
 }
+.aalert{
+    /* background-color: red;
+    color: white; */
+    display: none;
+}
+.showItem{
+    background-color: red;
+    color: white;
+    display: block;
+}
