@@ -12,7 +12,9 @@ class Budget {
         this.inputExpense = document.getElementById("input-expense")
         this.inputAmountExpense = document.getElementById("input-expense-amount")
         this.expenseFeedback = document.getElementById("expense-feedback")
-        
+        this.expenseList = document.getElementById("expense-lists")
+        this.itemList = [];
+        this.itemID = 0;
     }
     //budget form method
     submitFormBudget(){
@@ -56,8 +58,43 @@ class Budget {
           setTimeout(()=>{
             this.expenseFeedback.classList.remove("showItem")
           },2000)
+        }else{
+            let amount = parseInt(inputAmount)
+            // console.log(amount)
+            this.inputExpense.value = "";
+            this.inputAmountExpense.value = "";
+
+
+            let expense = {
+                id:this.itemID,
+                title:inputExpense,
+                amount:amount,
+            }
+            this.itemID++;
+            this.itemList.push(expense)
+            // console.log(expense)
+            this.addExpense(expense)
+
         }
     }
+    // add the expense
+    addExpense(expense){
+        const div = document.createElement("div")
+        div.classList.add("expense")
+        // console.log(div)
+        div.innerHTML = `   
+        
+        <div class="show-item-list">
+        <h5 class="text-danger">${expense.title}</h5>
+        <h5 class="text-danger">$ ${expense.amount}</h5>
+        <div class="icon-btn">
+            <a href=""><i class="bi bi-pencil-square fs-3"></i></a>
+            <a href=""><i class="bi bi-archive-fill text-danger fs-3"></i></a>
+        </div>
+    </div>`
+    this.expenseList.appendChild(div);
+    }
+
 
 
 
