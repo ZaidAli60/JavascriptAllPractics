@@ -32,6 +32,9 @@ body{
     color: white; */
     display: none;
 }
+.expense-feedback{
+    display: none;
+}
 .showItem{
     background-color: red;
     color: white;
