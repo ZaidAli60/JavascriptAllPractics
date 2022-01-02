@@ -53,3 +53,13 @@ body{
     padding: 3px 5px 3px 5px;
     border: 1px solid red;
 }
+
+.list-items{
+    display: flex;
+    justify-content: space-between;
+}
+.show-item-list{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
